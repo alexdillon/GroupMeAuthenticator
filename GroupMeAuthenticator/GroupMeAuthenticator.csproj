@@ -114,6 +114,6 @@
     <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
       <Output TaskParameter="Assemblies" ItemName="myAssemblyInfo" />
     </GetAssemblyIdentity>
-    <Exec Command="&quot;$(SolutionDir)\PackageForReleaseTools\PackageForRelease.exe&quot; --shortname $(ProjectName) --fullname &quot;GroupMe Authenticator&quot; --bindir &quot;$(OutDir)\&quot; --pubdir &quot;$(OutDir)\..\..\..\\Publish\\&quot; --version &quot;$([System.Version]::Parse(%(myAssemblyInfo.Version)).ToString(3))&quot;" />
+    <Exec Command="&quot;$(ProjectDir)\..\PackageForReleaseTools\PackageForRelease.exe&quot; --shortname $(ProjectName) --fullname &quot;GroupMe Authenticator&quot; --bindir &quot;$(OutDir)\&quot; --pubdir &quot;$(OutDir)\..\..\..\\Publish\\&quot; --version &quot;$([System.Version]::Parse(%(myAssemblyInfo.Version)).ToString(3))&quot;" />
   </Target>
 </Project>
